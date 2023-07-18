@@ -19,6 +19,7 @@ jobs:
         # Container name
         name: podsync
         # Command to run
+        options: -v /config.toml:/app/config.toml
 #         args: | # optional
 #           -p 8080:8080
 #           -v /data:/app/data/
