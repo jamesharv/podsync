@@ -19,10 +19,6 @@ jobs:
           options: -e PODSYNC_CONFIG_PATH=config/config.toml -e YOUTUBE_TOKEN=${{ secrets.YOUTUBE_TOKEN }} -v ${{ github.workspace }}/data:/app/data -v ${{ github.workspace }}/config:/app/config
           run: |
             echo "Running Script"
-            ls -lat
-            ls config
-            echo $PODSYNC_CONFIG_PATH
-            printenv
-            pwd
+            find . -type f -name config/config.toml | xargs sed -i "s/youtube = .*/youtube = ${{ secrets.YOUTUBE_TOKEN }}/g"
             ./podsync
             ls
