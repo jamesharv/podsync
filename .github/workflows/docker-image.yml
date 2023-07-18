@@ -16,7 +16,7 @@ jobs:
           #   password: ${{ secrets.DOCKER_PASSWORD }}
           #   registry: gcr.io
           image: mxpv/podsync:latest
-          options: --net='bridge' -v ${{ github.workspace }}/config.toml:/app/config.toml -e 'PODSYNC_CONFIG_PATH'='/app/config/config.toml' -v ${{ github.workspace }}/data:/app/data:'rw' -v ${{ github.workspace }}/config:/app/config:'rw'
+          options: --net='bridge' -v ${{ github.workspace }}/config.toml:/app/config.toml -e 'PODSYNC_CONFIG_PATH'='/app/config/config.toml' -v ${{ github.workspace }}/data:/app/data -v ${{ github.workspace }}/config:/app/config
         #   run: |
         #     echo "Running Script"
         #     /work/run-script
