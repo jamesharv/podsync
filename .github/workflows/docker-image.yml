@@ -16,9 +16,9 @@ jobs:
           #   password: ${{ secrets.DOCKER_PASSWORD }}
           #   registry: gcr.io
           image: mxpv/podsync:latest
-          options: -e PODSYNC_CONFIG_PATH=config/config.toml -e YOUTUBE_TOKEN=${{ secrets.YOUTUBE_TOKEN }} -v ${{ github.workspace }}/data:/app/data -v ${{ github.workspace }}/config:/app/config
+          options: -e PODSYNC_CONFIG_PATH=config/config.toml -v ${{ github.workspace }}/data:/app/data -v ${{ github.workspace }}/config:/app/config
           run: |
             echo "Running Script"
-            find . -type f -name config/config.toml | xargs sed -i "s/youtube = .*/youtube = ${{ secrets.YOUTUBE_TOKEN }}/g"
+            sed -i "s/YOUTUBE_TOKEN/${{ secrets.YOUTUBE_TOKEN }}/g" config/config.toml
             ./podsync
             ls
