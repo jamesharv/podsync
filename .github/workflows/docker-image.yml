@@ -1,0 +1,25 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+#     - uses: actions/checkout@v3
+#     - name: Build the Docker image
+#       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+     - name: Docker Run
+       uses: tj-actions/docker-run@v2.2.1
+       with:
+        # Docker image
+        image: mxpv/podsync:latest
+        # Container name
+        name: podsync
+        # Command to run
+        args: | # optional
+          -p 8080:8080
+          -v /data:/app/data/
+          -v config.toml:/app/config.toml
