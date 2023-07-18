@@ -8,19 +8,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-#     - uses: actions/checkout@v3
-#     - name: Build the Docker image
-#       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-     - name: Docker Run
-       uses: tj-actions/docker-run@v2.2.1
-       with:
-        # Docker image
-        image: mxpv/podsync:latest
-        # Container name
-        name: podsync
-        # Command to run
-        options: -v /config.toml:/app/config.toml
-#         args: | # optional
-#           -p 8080:8080
-#           -v /data:/app/data/
-#           -v config.toml:/app/config.toml
+      - name: Checkout 
+        uses: actions/checkout@v2 # Required to mount the Github Workspace to a volume 
+      - uses: addnab/docker-run-action@v3
+        with:
+        #   username: ${{ secrets.DOCKER_USERNAME }}
+        #   password: ${{ secrets.DOCKER_PASSWORD }}
+        #   registry: gcr.io
+          image: mxpv/podsync:latest
+          options: -v ${{ github.workspace }}/config.toml:/app/config.toml -e ABC=123
+        #   run: |
+        #     echo "Running Script"
+        #     /work/run-script
