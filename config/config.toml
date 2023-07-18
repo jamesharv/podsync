@@ -33,7 +33,7 @@ prefix = "example/prefix"
 # API keys to be used to access Youtube and Vimeo.
 # These can be either specified as string parameter or array of string (so those will be rotated).
 [tokens]
-youtube = "AIzaSyBXu-u-EOu-C91n3BqMuc_cXcGBKt_xDcA" # YouTube API Key. See https://developers.google.com/youtube/registering_an_application
+youtube = {{ YOUTUBE_TOKEN }} # YouTube API Key. See https://developers.google.com/youtube/registering_an_application
 # vimeo = [ # Multiple keys will be rotated.
 #   "VIMEO_API_KEY_1", # Vimeo developer keys. See https://developer.vimeo.com/api/guides/start#generate-access-token
 #   "VIMEO_API_KEY_2",
