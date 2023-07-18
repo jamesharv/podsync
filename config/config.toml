@@ -33,7 +33,7 @@ prefix = "example/prefix"
 # API keys to be used to access Youtube and Vimeo.
 # These can be either specified as string parameter or array of string (so those will be rotated).
 [tokens]
-youtube = "AIzaSyAyHneSHsjS6CHwzdDLQ8wSUHPAVLoxfmk" # YouTube API Key. See https://developers.google.com/youtube/registering_an_application
+youtube = "${YOUTUBE_TOKEN}" # YouTube API Key. See https://developers.google.com/youtube/registering_an_application
 # vimeo = [ # Multiple keys will be rotated.
 #   "VIMEO_API_KEY_1", # Vimeo developer keys. See https://developer.vimeo.com/api/guides/start#generate-access-token
 #   "VIMEO_API_KEY_2",
@@ -68,7 +68,7 @@ opml = true
 
 # Optional cron expression format for more precise update schedule.
 # If set then overwrite 'update_period'.
-cron_schedule = "@every 12h"
+# cron_schedule = "@every 12h"
 
 # Whether to cleanup old episodes.
 # Keep last 10 episodes (order desc by PubDate)
