@@ -21,6 +21,6 @@ jobs:
             echo "Running Script"
             ls -lat
             ls config
-            echo PODSYNC_CONFIG_PATH
+            echo $PODSYNC_CONFIG_PATH
             pwd
             ./podsync
