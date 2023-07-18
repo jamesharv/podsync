@@ -19,4 +19,4 @@ jobs:
           options: -e 'PODSYNC_CONFIG_PATH'='/app/config/config.toml' -v ${{ github.workspace }}/data:/app/data -v ${{ github.workspace }}/config:/app/config
           run: |
             echo "Running Script"
-            ls
+            ./podsync
