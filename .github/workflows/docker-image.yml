@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2 # Required to mount the Github Workspace to a volume
       - uses: addnab/docker-run-action@v3
-        timeout-minutes: 5
+        timeout-minutes: 2
         continue-on-error: true
         with:
           image: mxpv/podsync:latest
@@ -42,6 +42,6 @@ jobs:
           
       - name: Interact with object storage
         run: |
-          s3cmd put --recursive data s3://${{ secrets.BUCKET_NAME }}/sermons
+          s3cmd put --recursive data s3://${{ secrets.BUCKET_NAME }}/sermons/
           s3cmd info s3://${{ secrets.BUCKET_NAME }}
           s3cmd ls s3://${{ secrets.BUCKET_NAME }}
