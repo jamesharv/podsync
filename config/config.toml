@@ -28,7 +28,7 @@ region = "ap-southeast-2"
 bucket = "BUCKET_NAME"
 # If you use prefix, you may need to add a path to `server.hostname` setting
 # e.g. https://example-bucket-name.s3.us-west-2.amazonaws.com/example/prefix/
-prefix = "example/prefix"
+# prefix = "example/prefix"
 
 # API keys to be used to access Youtube and Vimeo.
 # These can be either specified as string parameter or array of string (so those will be rotated).
