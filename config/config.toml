@@ -15,7 +15,7 @@
 # Configure where to store the episode data
 [storage]
 # Could be "local" (default) for the local file system, or "s3" for a S3-compatible storage provider (e.g. AWS S3)
-type = "s3"
+type = "local"
 
 [storage.local]
 data_dir = "/app/data" # Don't change if you run podsync via docker
@@ -50,7 +50,7 @@ url = "https://www.youtube.com/playlist?list=PL-ZBo1TQFB8hf7kUInK-AojBcmKDCUmuc"
 page_size = 1
 
 # How often query for updates, examples: "60m", "4h", "2h45m"
-update_period = "12h"
+# update_period = "12h"
 
 quality = "high" # "high" or "low"
 format = "audio" # "audio", "video" or "custom"
