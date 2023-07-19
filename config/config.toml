@@ -15,7 +15,7 @@
 # Configure where to store the episode data
 [storage]
 # Could be "local" (default) for the local file system, or "s3" for a S3-compatible storage provider (e.g. AWS S3)
-type = "local"
+type = "s3"
 
 [storage.local]
 data_dir = "/app/data" # Don't change if you run podsync via docker
