@@ -3,14 +3,14 @@
 # Web server related configuration.
 [server]
 # HTTP server port.
-port = 43443
+# port = 43443
 # Optional. If you want to hide Podsync behind reverse proxy like nginx, you can use hostname field.
 # Server will be accessible from http://localhost:8080, but episode links will point to https://my.test.host:4443/ID1/XYZ
-hostname = "http://localhost:43443"
+# hostname = "http://localhost:43443"
 # Bind a specific IP addresses for server ,"*": bind all IP addresses which is default option, localhost or 127.0.0.1  bind a single IPv4 address
-bind_address = "127.0.0.1"
+# bind_address = "127.0.0.1"
 # Specify path for reverse proxy and only [A-Za-z0-9]
-path = "test"
+# path = "test"
 
 # Configure where to store the episode data
 [storage]
@@ -23,9 +23,9 @@ data_dir = "/app/data" # Don't change if you run podsync via docker
 # To configure for a S3 provider, set key and secret in environment variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, respectively;
 # then fillout the API endpoint, region, and bucket below.
 [storage.s3]
-endpoint_url = "https://s3.us-west-2.amazonaws.com"
-region = "us-west-2"
-bucket = "example-bucket-name"
+endpoint_url = "BUCKET_URL"
+region = "ap-southeast-2"
+bucket = "BUCKET_NAME"
 # If you use prefix, you may need to add a path to `server.hostname` setting
 # e.g. https://example-bucket-name.s3.us-west-2.amazonaws.com/example/prefix/
 prefix = "example/prefix"

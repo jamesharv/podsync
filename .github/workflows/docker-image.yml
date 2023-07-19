@@ -20,5 +20,8 @@ jobs:
           run: |
             echo "Running Script"
             sed -i "s/YOUTUBE_TOKEN/${{ secrets.YOUTUBE_TOKEN }}/g" config/config.toml
+            sed -i "s/BUCKET_NAME/${{ secrets.BUCKET_NAME }}/g" config/config.toml
+            sed -i "s/BUCKET_URL/${{ secrets.BUCKET_URL }}/g" config/config.toml
             ./podsync
             ls
+          timeout-minutes: 5
