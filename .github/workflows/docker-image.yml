@@ -12,6 +12,7 @@ jobs:
         uses: actions/checkout@v2 # Required to mount the Github Workspace to a volume
       - uses: addnab/docker-run-action@v3
         timeout-minutes: 5
+        continue-on-error: true
         with:
           image: mxpv/podsync:latest
           options: -e PODSYNC_CONFIG_PATH=config/config.toml -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} -v ${{ github.workspace }}/data:/app/data -v ${{ github.workspace }}/config:/app/config
