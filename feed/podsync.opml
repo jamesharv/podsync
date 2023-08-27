@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+	<head>
+		<title>Podsync feeds</title>
+	</head>
+	<body>
+		<outline text="The Good Shepherd Orthodox Church: Sermons (2020-03-28 08:55:46 +0000 UTC)" type="rss" xmlUrl="http://localhost/Sermons.xml" title="The Good Shepherd Orthodox Church: Sermons"></outline>
+	</body>
+</opml>

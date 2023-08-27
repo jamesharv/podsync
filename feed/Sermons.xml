@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>The Good Shepherd Orthodox Church: Sermons</title>
+    <link>https://youtube.com/playlist?list=PL-ZBo1TQFB8hf7kUInK-AojBcmKDCUmuc</link>
+    <description>The Good Shepherd Orthodox Church: Sermons (2020-03-28 08:55:46 +0000 UTC)</description>
+    <category>TV &amp; Film</category>
+    <generator>Podsync generator (support us at https://github.com/mxpv/podsync)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Aug 2023 05:28:10 +0000</lastBuildDate>
+    <pubDate>Sat, 28 Mar 2020 08:55:46 +0000</pubDate>
+    <image>
+      <url>https://i.ytimg.com/vi/OaTbp7szbXY/maxresdefault.jpg</url>
+      <title>The Good Shepherd Orthodox Church: Sermons</title>
+      <link>https://youtube.com/playlist?list=PL-ZBo1TQFB8hf7kUInK-AojBcmKDCUmuc</link>
+    </image>
+    <itunes:author>The Good Shepherd Orthodox Church: Sermons</itunes:author>
+    <itunes:subtitle>The Good Shepherd Orthodox Church: Sermons</itunes:subtitle>
+    <itunes:summary><![CDATA[The Good Shepherd Orthodox Church: Sermons (2020-03-28 08:55:46 +0000 UTC)]]></itunes:summary>
+    <itunes:block>yes</itunes:block>
+    <itunes:image href="https://i.ytimg.com/vi/OaTbp7szbXY/maxresdefault.jpg"></itunes:image>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:category text="TV &amp; Film"></itunes:category>
+    <item>
+      <guid>OaTbp7szbXY</guid>
+      <title>Sermon for Thomas Sunday - 23-04-2023</title>
+      <link>https://youtube.com/watch?v=OaTbp7szbXY</link>
+      <description>https://www.thegoodshepherd.org.au</description>
+      <pubDate>Sat, 29 Apr 2023 00:18:50 +0000</pubDate>
+      <enclosure url="http://localhost/Sermons/OaTbp7szbXY.mp3" length="13579389" type="audio/mpeg"></enclosure>
+      <itunes:author>The Good Shepherd Orthodox Church: Sermons</itunes:author>
+      <itunes:subtitle>Sermon for Thomas Sunday - 23-04-2023</itunes:subtitle>
+      <itunes:summary><![CDATA[https://www.thegoodshepherd.org.au]]></itunes:summary>
+      <itunes:image href="https://i.ytimg.com/vi/OaTbp7szbXY/maxresdefault.jpg"></itunes:image>
+      <itunes:duration>18:29</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:order>1</itunes:order>
+    </item>
+  </channel>
+</rss>
