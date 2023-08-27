@@ -15,13 +15,13 @@ jobs:
         continue-on-error: true
         with:
           image: mxpv/podsync:latest
-          options: -e PODSYNC_CONFIG_PATH=config/config.toml -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} -v ${{ github.workspace }}/data:/app/data -v ${{ github.workspace }}/config:/app/config --headless
+          options: -e PODSYNC_CONFIG_PATH=config/config.toml -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} -v ${{ github.workspace }}/data:/app/data -v ${{ github.workspace }}/config:/app/config
           run: |
             echo "Running Script"
             sed -i "s/YOUTUBE_TOKEN/${{ secrets.YOUTUBE_TOKEN }}/g" config/config.toml
             sed -i "s/BUCKET_NAME/${{ secrets.BUCKET_NAME }}/g" config/config.toml
             sed -i "s/BUCKET_URL/${{ secrets.BUCKET_URL }}/g" config/config.toml
-            ./podsync
+            ./podsync --headless
             ls
       - name: Use S3cmd
         # timeout-minutes: 5
