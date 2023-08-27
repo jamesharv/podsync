@@ -9,23 +9,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2 # Required to mount the Github Workspace to a volume
+        uses: actions/checkout@v2
       - uses: addnab/docker-run-action@v3
-        # timeout-minutes: 2
         continue-on-error: true
         with:
           image: mxpv/podsync:latest
-          options: -e PODSYNC_CONFIG_PATH=config/config.toml -v ${{ github.workspace }}/audio:/app/data -v ${{ github.workspace }}/config:/app/config
+          options: -e PODSYNC_CONFIG_PATH=config/config.toml -v ${{ github.workspace }}/feed:/app/data -v ${{ github.workspace }}/config:/app/config
           run: |
             echo "Running Script"
             sed -i "s/YOUTUBE_TOKEN/${{ secrets.YOUTUBE_TOKEN }}/g" config/config.toml
             ./podsync --headless
             ls
-            ls audio/
+            ls feed/
       - name: Add new files
         run: |
-          git config --local user.email "action@github.com"
+          git config --local user.email '${{github.actor}}@users.noreply.github.com'
           git config --local user.name "GitHub Action"
-          git add audio/
+          git add feed/
           git commit -m "Add downloaded files"
           git push
