@@ -11,11 +11,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2 # Required to mount the Github Workspace to a volume
       - uses: addnab/docker-run-action@v3
-        timeout-minutes: 2
+        # timeout-minutes: 2
         continue-on-error: true
         with:
           image: mxpv/podsync:latest
-          options: -e PODSYNC_CONFIG_PATH=config/config.toml -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} -v ${{ github.workspace }}/data:/app/data -v ${{ github.workspace }}/config:/app/config
+          options: -e PODSYNC_CONFIG_PATH=config/config.toml -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} -v ${{ github.workspace }}/data:/app/data -v ${{ github.workspace }}/config:/app/config --headless
           run: |
             echo "Running Script"
             sed -i "s/YOUTUBE_TOKEN/${{ secrets.YOUTUBE_TOKEN }}/g" config/config.toml
@@ -24,7 +24,7 @@ jobs:
             ./podsync
             ls
       - name: Use S3cmd
-        timeout-minutes: 5
+        # timeout-minutes: 5
         # You may pin to the exact commit or the version.
         # uses: s3-actions/s3cmd@4e3a53c3e9313f573ff3f69aec7a772366f2f8f5
         uses: s3-actions/s3cmd@v1.5.0
