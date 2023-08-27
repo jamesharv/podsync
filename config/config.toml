@@ -22,10 +22,10 @@ data_dir = "/app/data" # Don't change if you run podsync via docker
 
 # To configure for a S3 provider, set key and secret in environment variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, respectively;
 # then fillout the API endpoint, region, and bucket below.
-[storage.s3]
-endpoint_url = "BUCKET_URL"
-region = "ap-southeast-2"
-bucket = "BUCKET_NAME"
+# [storage.s3]
+# endpoint_url = "BUCKET_URL"
+# region = "ap-southeast-2"
+# bucket = "BUCKET_NAME"
 # If you use prefix, you may need to add a path to `server.hostname` setting
 # e.g. https://example-bucket-name.s3.us-west-2.amazonaws.com/example/prefix/
 # prefix = "example/prefix"
@@ -121,7 +121,7 @@ private_feed = true
 # Optional, auto update youtube-dl every 24 hours
 self_update = true
 # Download timeout in minutes.
-timeout = 15
+timeout = 1
 
 # Optional log config. If not specified logs to the stdout
 # [log]
