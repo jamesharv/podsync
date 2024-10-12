@@ -1,6 +1,9 @@
 name: Docker Image CI
 
 on:
+  push:
+    branches: ["master"]
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -13,7 +16,7 @@ jobs:
       - uses: addnab/docker-run-action@v3
         continue-on-error: true
         with:
-          image: mxpv/podsync:latest
+          image: ghcr.io/mxpv/podsync:nightly
           options: -e PODSYNC_CONFIG_PATH=config/config.toml -v ${{ github.workspace }}/feed:/app/data -v ${{ github.workspace }}/config:/app/config
           run: |
             echo "Running Script"
